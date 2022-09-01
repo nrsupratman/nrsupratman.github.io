@@ -39,7 +39,7 @@ html {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(0, 0, 0, 0.2) url("../image/1.jpeg") no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  height: 90vh;
+  height: 93vh;
   color: white;
   /* box-shadow: inset 0 3px 6px rgba(255, 255, 255, 1), 0 3px 6px rgba(255, 255, 255, 1); */
   font-family: 'Raleway', sans-serif;
@@ -50,7 +50,7 @@ html {
   flex-direction: column;
   justify-content: space-around;
   width: 100%;
-  max-height: 90vh;
+  max-height: 93vh;
   padding-top: 0px !important; 
   /* padding-bottom: 0px !important; */
 }
@@ -135,7 +135,7 @@ html {
     flex-direction: column;
     justify-content: space-around;
     width: 100%;
-    max-height: 80vh; 
+    max-height: 93vh; 
     /* padding-top: 5rem !important; */
   }
 
@@ -477,11 +477,12 @@ vertical-align: middle;
   bottom: 0;
   width: 100vw;
   padding: 1px 1px 1px 1px;
-  line-height: 20px;
+  /* line-height: 5vh; */
   text-align: center;
   vertical-align: middle;
   background: #53008a;
-  color: whitesmoke;    
+  color: whitesmoke;  
+  height: 7vh;  
 }
 
 .footer p {

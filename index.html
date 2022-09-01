@@ -53,7 +53,7 @@
     <section class="hero is-large">
       <!-- Begin New Mobile Nav -->
       <nav class="navbar navbar-dark navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom" id="hero-foot-mobile"
-        style="background:#53008a; font-family:Arial, Helvetica, sans-serif; height: 10vh; display: none;">
+        style="background:#53008a; font-family:Arial, Helvetica, sans-serif; height: 7vh;">
         <ul class="navbar-nav nav-justified w-100">
           <li class="nav-item">
             <a href="#names" class="nav-link">Home</a>
@@ -66,6 +66,9 @@
           </li>
           <li class="nav-item">
             <a href="#lokasi" class="nav-link">Lokasi</a>
+          </li>
+          <li class="nav-item">
+            <a href="#gallery" class="nav-link">Galeri</a>
           </li>
 
         </ul>
@@ -117,6 +120,9 @@
                 </li>
                 <li>
                   <a href="#lokasi">Lokasi</a>
+                </li>
+                <li>
+                  <a href="#gallery">Galeri</a>
                 </li>
                 
               </ul>
@@ -319,6 +325,115 @@
       </div>
     </section>
     <!-- End Lokasi Content -->
+
+ <!-- Gallery -->
+ <section class="section-dark" id="gallery" >
+  <div class="container">
+    <div class="column is-12 regular-section" data-aos="fade-up" data-aos-easing="linear">
+      <h1 class="title has-text-centered section-title" style="padding-bottom: 0px;">Galeri</h1>
+    </div>
+  </div>
+</section>
+
+  <div class="splide" id="primary-slider" data-aos="fade-up" data-aos-easing="linear">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide"><img src="image/gallery/1.jpg"></li>
+        <li class="splide__slide"><img src="image/gallery/2.jpg"></li>
+        <li class="splide__slide"><img src="image/gallery/3.jpg"></li>
+        <li class="splide__slide"><img src="image/gallery/4.jpg"></li>
+        <li class="splide__slide"><img src="image/gallery/5.jpg"></li>
+        <li class="splide__slide"><img src="image/gallery/6.jpg"></li>
+        <li class="splide__slide"><img src="image/gallery/7.jpg"></li>
+        <li class="splide__slide"><img src="image/gallery/8.jpg"></li>
+        <li class="splide__slide"><img src="image/gallery/9.jpg"></li>
+        <li class="splide__slide"><img src="image/gallery/10.jpg"></li>
+        <li class="splide__slide"><img src="image/gallery/11.jpg"></li>
+        <li class="splide__slide"><img src="image/gallery/12.jpg"></li>
+        <li class="splide__slide"><img src="image/gallery/13.jpg"></li>
+        <li class="splide__slide"><img src="image/gallery/14.jpg"></li>
+      </ul>
+    </div>
+    <div id="secondary-slider" class="splide" style="background-color: white; margin-bottom: 50px;">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <img src="image/gallery/1.jpg">
+          </li>
+          <li class="splide__slide">
+            <img src="image/gallery/2.jpg">
+          </li>
+          <li class="splide__slide">
+            <img src="image/gallery/3.jpg">
+          </li>
+          <li class="splide__slide">
+            <img src="image/gallery/4.jpg">
+          </li>
+          <li class="splide__slide">
+            <img src="image/gallery/5.jpg">
+          </li>
+          <li class="splide__slide">
+            <img src="image/gallery/6.jpg">
+          </li>
+          <li class="splide__slide">
+            <img src="image/gallery/7.jpg">
+          </li>
+          <li class="splide__slide">
+            <img src="image/gallery/8.jpg">
+          </li>
+          <li class="splide__slide">
+            <img src="image/gallery/9.jpg">
+          </li>
+          <li class="splide__slide">
+            <img src="image/gallery/10.jpg">
+          </li>
+          <li class="splide__slide">
+            <img src="image/gallery/11.jpg">
+          </li>
+          <li class="splide__slide">
+            <img src="image/gallery/12.jpg">
+          </li>
+          <li class="splide__slide">
+            <img src="image/gallery/13.jpg">
+          </li>
+          <li class="splide__slide">
+            <img src="image/gallery/14.jpg">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    
+  
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+  <script>
+   var secondarySlider = new Splide( '#secondary-slider', {
+        rewind      : true,
+        fixedWidth  : 100,
+        fixedHeight : 64,
+        isNavigation: true,
+        gap: 0,
+        focus       : 'center',
+        pagination  : false,
+        cover       : true,
+      } ).mount();
+
+      // Create the main slider.
+      var primarySlider = new Splide( '#primary-slider', {
+        type       : 'fade',
+        heightRatio: 1,
+        pagination : false,
+        arrows     : false,
+        cover      : true,
+        autoplay: true,
+      } );
+
+      // Set the thumbnails slider as a sync target and then call mount.
+      primarySlider.sync( secondarySlider ).mount();
+  </script>
+<!-- End of Gallery -->
+
     <!-- Begin RSVP Content -->
     <!-- <section class="section-darker contact" id="rsvp">
         <div class="container">
@@ -399,7 +514,7 @@
 
   <script>
     function play() {
-      document.getElementById('hero-foot-mobile').style.display = 'flex';
+      // document.getElementById('hero-foot-mobile').style.display = 'flex';
       var audio = new Audio('image/bs2.mp3');
       audio.play();
       document.getElementById('regular-section').scrollIntoView({
