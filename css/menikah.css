@@ -39,7 +39,7 @@ html {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(0, 0, 0, 0.2) url("../image/1.jpeg") no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-position: 0px 0px;
+  height: 90vh;
   color: white;
   /* box-shadow: inset 0 3px 6px rgba(255, 255, 255, 1), 0 3px 6px rgba(255, 255, 255, 1); */
   font-family: 'Raleway', sans-serif;
@@ -47,7 +47,7 @@ html {
 
 .hero-body{
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   padding-top: 0px !important; 
 }
 
@@ -56,7 +56,7 @@ html {
 }
 
 .hero-body .button{
-  margin-top: 40px; 
+  /* margin-top: 40px;  */
 }
 
 
@@ -65,20 +65,23 @@ html {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   /* transform: rotate(-2deg); */
-  font-size: 35px;
-  padding-bottom: 5px;
+  font-size: 20px;
+  /* padding-bottom: 5px; */
   color: rgb(122, 0, 126);
   font-weight: bolder;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  margin-bottom: 0;
+  margin-top: 25px;
 }
 
 .hero .subtitle {
-  padding: 20px;
+  /* padding: 20px; */
   font-family:  'Rouge Script', sans-serif;
   color:rgb(122, 0, 126);
   font-size: 45px;
   font-weight: bolder;
   text-shadow: -0.5px 0 white, 0 0.5px white, 0.5px 0 white, 0 -0.5px white;
+  padding-bottom: 10px;
 }
 
 .hero .tempatwaktu {
@@ -99,13 +102,16 @@ html {
   }
 
   .hero-body .button{
-    margin-top: 55px; 
+    /* margin-top: 55px;  */
   }
 
   .hero-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     width: 100%;
-    height: 100vh; 
-    padding-top: 5rem !important;
+    height: 90vh; 
+    /* padding-top: 5rem !important; */
   }
 
   .hero{
