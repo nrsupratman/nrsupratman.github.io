@@ -52,8 +52,8 @@
     <!-- Begin Hero -->
     <section class="hero is-large">
       <!-- Begin New Mobile Nav -->
-      <nav class="navbar navbar-dark navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom"
-        style="background:#53008a; font-family:Arial, Helvetica, sans-serif; height: 10vh;">
+      <nav class="navbar navbar-dark navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom" id="hero-foot-mobile"
+        style="background:#53008a; font-family:Arial, Helvetica, sans-serif; height: 10vh; display: none;">
         <ul class="navbar-nav nav-justified w-100">
           <li class="nav-item">
             <a href="#names" class="nav-link">Home</a>
@@ -101,7 +101,7 @@
       </div>
       <!-- End Hero Content-->
       <!-- Begin Hero Menu -->
-      <div class="hero-foot ">
+      <div class="hero-foot">
         <div class="hero-foot--wrapper">
           <div class="columns">
             <div class="column is-12 hero-menu-desktop has-text-centered">
@@ -399,6 +399,7 @@
 
   <script>
     function play() {
+      document.getElementById('hero-foot-mobile').style.display = 'flex';
       var audio = new Audio('image/bs2.mp3');
       audio.play();
       document.getElementById('regular-section').scrollIntoView({
