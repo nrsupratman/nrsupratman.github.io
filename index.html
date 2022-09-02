@@ -52,8 +52,8 @@
     <!-- Begin Hero -->
     <section class="hero is-large">
       <!-- Begin New Mobile Nav -->
-      <nav class="navbar navbar-dark navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom" id="hero-foot-mobile"
-        style="background:#53008a; font-family:Arial, Helvetica, sans-serif; height: 7vh;">
+      <nav data-aos-easing="ease-out" data-aos-duration="800" class="navbar navbar-dark navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom" id="hero-foot-mobile"
+        style="background:#53008a; height: 7vh; visibility: hidden; opacity: 0; transition: visibility 0s, opacity 0.5s linear;">
         <ul class="navbar-nav nav-justified w-100">
           <li class="nav-item">
             <a href="#names" class="nav-link">Home</a>
@@ -92,7 +92,7 @@
           <br>
           
         </div>
-        <div style="text-align: center; height: fit-content;">
+        <div id="button-buka"style="text-align: center; height: fit-content;">
           <div class="button" onclick="play()"
             style="background-color: #6d0268;height:50px;width: 150px;text-align: center;font-size: 17px;color:#ffffff">
             <small><b>Buka Undangan</b></small>
@@ -330,11 +330,9 @@
  <section class="section-dark" id="gallery" >
   <div class="container">
     <div class="column is-12 regular-section" data-aos="fade-up" data-aos-easing="linear">
-      <h1 class="title has-text-centered section-title" style="padding-bottom: 0px;">Galeri</h1>
+      <h1 class="title has-text-centered section-title" style="padding-bottom: 20px;">Galeri</h1>
     </div>
   </div>
-</section>
-
   <div class="splide" id="primary-slider" data-aos="fade-up" data-aos-easing="linear">
     <div class="splide__track">
       <ul class="splide__list">
@@ -403,6 +401,8 @@
       </div>
     </div>
   </div>
+  
+</section>
     
   
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
@@ -480,11 +480,11 @@
     <!-- End RSVP Content -->
     <!-- <embed name="GoodEnough" src="image/song.mp3" loop="true" hidden="false" autostart="true"></embed> -->
 
-    <iframe src="image/bs2.mp3" allow="autoplay" style="display:none" id="iframeAudio">
-    </iframe>
-    <audio autoplay loop>
+    <!-- <iframe src="image/bs2.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+    </iframe> -->
+    <!-- <audio autoplay loop>
       <source src="image/bs2.mp3" type="audio/mpeg">
-    </audio>
+    </audio> -->
 
   </div>
   <!-- End Main Content -->
@@ -513,9 +513,8 @@
   </script>
 
   <script>
+    var audio = new Audio('image/bs2.mp3');
     function play() {
-      // document.getElementById('hero-foot-mobile').style.display = 'flex';
-      var audio = new Audio('image/bs2.mp3');
       audio.play();
       document.getElementById('regular-section').scrollIntoView({
         behavior: 'smooth'
@@ -549,16 +548,19 @@
 
       });
     }
-    // var elem = document.documentElement;
-    // if (elem.requestFullscreen) {
-    //   elem.requestFullscreen();
-    // } else if (elem.webkitRequestFullscreen) { /* Safari */
-    //   elem.webkitRequestFullscreen();
-    // } else if (elem.msRequestFullscreen) { /* IE11 */
-    //   elem.msRequestFullscreen();
-    // } else if (elem.mozRequestFullscreen) { /* IE11 */
-    //   elem.msRequestFullscreen();
-    // }
+    window.onscroll = function (){
+      var button_buka = document.getElementById("button-buka");
+      var hero_foot = document.getElementById('hero-foot-mobile');
+      console.log(button_buka.offsetTop);
+      console.log(window.pageYOffset);
+      if(window.pageYOffset > button_buka.offsetTop){
+        hero_foot.style.visibility = "visible";
+        hero_foot.style.opacity = 1;
+      }else{
+        hero_foot.style.visibility = "hidden";
+        hero_foot.style.opacity = 0;
+      }
+    }
   </script>
 </body>
 
